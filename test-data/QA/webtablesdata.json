@@ -1,0 +1,34 @@
+{
+    "wt01": {
+        "firstName": "John Doe",
+        "lastName": "Smith",
+        "email": "johndoe@example.com",
+        "age": "30",
+        "salary": "50000",
+        "department": "Engineering"
+    },
+    "wt02": {
+        "firstName": "Jane Doe",
+        "lastName": "Johnson",
+        "email": "janedoeexample.com",
+        "age": "25",
+        "salary": "45000",
+        "department": "Marketing"
+    },
+    "wt03": {
+        "firstName": "Jane Doe",
+        "lastName": "Johnson",
+        "email": "janedoe@example.com",
+        "age": "aa",
+        "salary": "45000",
+        "department": "Marketing"
+    },
+    "wt04": {
+        "firstName": "Jane Doe",
+        "lastName": "Johnson",
+        "email": "janedoe@example.com",
+        "age": "",
+        "salary": "45000",
+        "department": ""
+    }
+}

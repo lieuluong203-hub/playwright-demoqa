@@ -1,0 +1,55 @@
+
+  {
+  "form01": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "userEmail": "john.doe@gmail.com",
+    "gender": "Male",
+    "mobile": "0123456789",
+    "dateOfBirth": "01 Jan 1990",
+    "day": "01",
+    "month": "January",
+    "year": "1990",
+    "subjects": "Maths",
+    "hobbies": "Sports",
+    "address": "123 Main St",
+    "state": "NCR",
+    "city": "Delhi",
+    "picturePath": "tests/data/cat.jpg"
+  },
+  "form02": {
+    "firstName": "",
+    "lastName": "",
+    "userEmail": "",
+    "gender": "",
+    "mobile": "",
+    "address": ""
+  },
+  "form03": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "gender": "Male",
+    "mobile": ""
+  },
+  "form04": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "gender": "Male",
+    "mobile": "123"
+  },
+  "form05": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "gender": "Male",
+    "mobile": "0123456789",
+    "hobbies": ["Sports", "Reading", "Music"]
+  },
+  "form06": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "gender": "Male",
+    "mobile": "0123456789",
+    "subjects": ["Maths", "English", "Physics"]
+  }
+  
+}
