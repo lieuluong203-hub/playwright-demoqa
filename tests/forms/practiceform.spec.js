@@ -32,9 +32,28 @@ test.describe('Practice Form', () => {
         await practiceformpage.uploadPicture(testData.form01.picturePath);
         await practiceformpage.fillAddress(testData.form01.address);
         await practiceformpage.selectStateAndCity(testData.form01.state, testData.form01.city);
-        
-
+    
         await practiceformpage.clickSubmit();
+        await expect(practiceformpage.verifyForm()).toBeVisible();
+        
+    })
+    test ("TC02: verify information validation", async () => {
+        await practiceformpage.fillBasicInfo(
+            testData.form02.firstName,
+            testData.form02.lastName,
+            testData.form02.userEmail,
+            testData.form02.mobile
+        );
+        await practiceformpage.selectGender(testData.form02.gender);
+        await practiceformpage.selectDateOfBirth(testData.form02.dateOfBirth);
+        await practiceformpage.selectSubjects(testData.form02.subjects);
+        await practiceformpage.selectHobbies(testData.form02.hobbies);
+        await practiceformpage.uploadPicture(testData.form02.picturePath);
+        await practiceformpage.fillAddress(testData.form02.address);
+        await practiceformpage.selectStateAndCity(testData.form02.state, testData.form02.city);
+    
+        await practiceformpage.clickSubmit();
+        await expect(practiceformpage.verifyForm()).not.toBeVisible();
         
     })
 })
