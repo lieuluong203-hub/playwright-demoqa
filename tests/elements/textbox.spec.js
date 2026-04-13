@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 const { Homepage } = require('../../pages/homepage');
 const { ElementsPage } = require('../../pages/elementspage');
 const { TextboxPage } = require('../../pages/textboxpage');
-const testData = require('../../test-data/QA/textboxdata.json');
+const testData = require('../../test-data/QA/textboxData.json');
 
 
 test.describe('Textbox', () => {

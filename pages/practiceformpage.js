@@ -26,7 +26,7 @@ exports.PracticeFormPage = class PracticeFormPage {
     }
     async fillBasicInfo(firstName, lastName, userEmail, userNumber) {
 
-        await this.firstName.fill(firstName);
+        await this.firstName.fill(firstName,{force: true});
         await this.lastName.fill(lastName);
         await this.userEmail.fill(userEmail);
         await this.userNumber.fill(userNumber);
@@ -38,16 +38,22 @@ exports.PracticeFormPage = class PracticeFormPage {
             'Other': '#gender-radio-3',
     
         };
-        await this.page.locator(map[gender]).check();
+        if (map[gender]) { // 
+            await this.page.locator(map[gender]).check();
+        }
     }
     async selectDateOfBirth(dateOfBirth) {
-        await this.dateOfBirth.fill(dateOfBirth);
-        await this.dateOfBirth.press('Tab');
+        if (dateOfBirth) {
+            await this.dateOfBirth.fill(dateOfBirth);
+            await this.dateOfBirth.press('Tab');
+        }
     }
     async selectSubjects(subjects) {
+        if (subjects) {
         await this.subjects.fill(subjects);
         await this.page.getByRole('option', { name: subjects }).click();
     }
+}
     async selectHobbies(hobbies) {
         const map = {
             'Sports': '#hobbies-checkbox-1',
@@ -55,28 +61,37 @@ exports.PracticeFormPage = class PracticeFormPage {
             'Music': '#hobbies-checkbox-3',
             
         };
-        await this.page.locator(map[hobbies]).check();
+        if (map[hobbies]) {
+            await this.page.locator(map[hobbies]).check();
+        }
 
     }
     async uploadPicture(filePath) {
+        if (filePath){
         await this.picture.setInputFiles(filePath);
     }
+}
     async fillAddress(address) {
+        if (address){
         await this.currentAddress.fill(address);
     }
+}
     async selectStateAndCity(state, city) {
+        if (state){
         await this.state.scrollIntoViewIfNeeded();
         await this.state.click();
         await this.page.getByText(state, { exact: true }).click();
-
+        }
+        if (city){
+            
         await this.city.click();
         await this.page.getByText(city, { exact: true }).click();
-
+        }
     }
     async clickSubmit() {
         await this.submit.click();
     }
-    async verifyForm() {
+    verifyForm() { 
         // await expect(this.submitTheForm).toBeVisible();
         return this.submitTheForm;
     }
