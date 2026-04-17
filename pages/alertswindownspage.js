@@ -6,6 +6,7 @@ exports.AlertsWindowsPage = class AlertsWindowsPage {
         this.browserWindows = page.getByText('Browser Windows');
         this.alerts = page.getByText('Alerts', { exact: true });
         this.frame = page.getByText('Frames', { exact: true });
+        this.modalDialogs = page.getByText('Modal Dialogs', { exact: true });''
     }
     async goto() {
         await this.page.goto(this.url);
@@ -18,5 +19,8 @@ exports.AlertsWindowsPage = class AlertsWindowsPage {
     }
     async clickFrames() {
         await this.frame.click({ force: true });
+    }
+    async clickModalDialogs() {
+        await this.modalDialogs.click({ force: true });
     }
 }
