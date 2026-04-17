@@ -1,20 +1,20 @@
 const {test, expect} = require('@playwright/test');
 const { Homepage } = require('../../pages/homepage');
-const {AlertsPage} = require('../../pages/alertspage');
+const { AlertsWindowsPage } = require('../../pages/alertswindownspage');
 const { BrowserWindowsPage } = require('../../pages/browserwindowspage');
 
 test.describe('Browser Windows', () => {
     let homepage;
-    let elementspage;
+    let alertswindowspage;
     let browserwindowspage;
 
     test.beforeEach(async ({ page }) => {
         homepage = new Homepage(page);
-        elementspage = new AlertsPage(page);
+        alertswindowspage = new AlertsWindowsPage(page);
         browserwindowspage = new BrowserWindowsPage(page);
         await homepage.goto();
         await homepage.clickAlerts();
-        await elementspage.clickBrowserWindows();
+        await alertswindowspage.clickBrowserWindows();
     });
     test('TC01: Click on Browser Windows', async ({page}) => {
         //bat tab moi + click cung luc
