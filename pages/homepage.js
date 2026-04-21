@@ -9,6 +9,7 @@ exports.Homepage = class Homepage {
         this.elements = page.locator('.card-body').filter({ hasText: 'Elements' });
         this.forms = page.locator('.card-body').filter({ hasText: 'Forms' });
         this.alerts = page.locator('.card-body').filter({ hasText: 'Alerts, Frame & Windows' });
+        this.widgets = page.locator('.card-body').filter({ hasText: 'Widgets' });
         
     }
     async goto() {
@@ -25,5 +26,9 @@ exports.Homepage = class Homepage {
     async clickAlerts() {
         await expect(this.alerts).toBeVisible(); 
         await this.alerts.click();
+    }
+    async clickWidgets() {
+        await expect(this.widgets).toBeVisible(); 
+        await this.widgets.click();
     }
 }
