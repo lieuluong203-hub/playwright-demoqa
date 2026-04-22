@@ -11,7 +11,7 @@ test.describe('Widgets-Autocomplete', () => {
     );
 
     test('TC01: select 1 color in multi select', async ({page}) => {
-        await autocompletePage.multiSelectColor('Green');
+        await autocompletePage.multiSelectColor('Gr');
         await expect (autocompletePage.selectValue).toContainText ('Green');
         
     });
@@ -22,9 +22,10 @@ test.describe('Widgets-Autocomplete', () => {
         
     });
     test('TC03: remove color in multi select', async ({page}) => {
-       // await autocompletePage.multiSelectColor('Green');
+       await autocompletePage.multiSelectColor('Green');
         await autocompletePage.multiSelectColor('Red');
         await autocompletePage.removeColor('Green');
+        console.log('remove: Green');
         await expect (autocompletePage.selectValue).not.toContainText (['Green']);
         
     });
