@@ -36,6 +36,29 @@ test.describe('Progress Bar', () => {
         expect(await progressBarPage.getProgressBarValue()).toBe('0');
         
     });
+
+    test ('TC05: Verify Button Text Change', async ({page}) => {
+        await expect(progressBarPage.btnStart)
+        .toHaveText('Start');
+
+    await progressBarPage.clickStartStopButton();
+
+    await expect(progressBarPage.btnStart)
+        .toHaveText('Stop');
+
+    await progressBarPage.waitUntilComplete();
+    
+    // await page.waitForTimeout(5000);
+
+    await expect(progressBarPage.btnReset)
+        .toHaveText('Reset');
+
+    await progressBarPage.clickResetButton();
+
+    await expect(progressBarPage.btnStart)
+        .toHaveText('Start');
+        
+    })
     //close browser
     test.afterEach(async ({ page }) => {
         await page.close();
