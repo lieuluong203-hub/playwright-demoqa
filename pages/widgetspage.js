@@ -9,8 +9,8 @@ exports.WidgetsPage = class WidgetsPage {
         this.slider = page.getByText('Slider', { exact: true });
         this.progressBar = page.getByText('Progress Bar', { exact: true });
         this.tabs = page.getByText('Tabs', { exact: true });
-        this.tabs = page.getByText('Tooltips', { exact: true });
-
+        this.tooltips = page.getByText('Tooltips', { exact: true });
+        this.menu = page.getByRole('listitem').filter({ hasText: /^Menu$/ });
     }
     async goto() {
         await this.page.goto(this.url);
@@ -35,5 +35,8 @@ exports.WidgetsPage = class WidgetsPage {
     }
     async clickTooltips() {
         await this.tooltips.click({ force: true });
+    }
+    async clickMenu() {
+        await this.menu.click({ force: true });
     }
 }
